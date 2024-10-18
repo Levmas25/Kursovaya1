@@ -1,0 +1,78 @@
+﻿<Page x:Class="Kursovaya1.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Kursovaya1"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+      Title="MainPage" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/> <!-- Row for textboxes -->
+            <RowDefinition/>                <!-- Row for DataGrid -->
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal">
+            <Label Content="ФИО" VerticalAlignment="Top"/>
+            <StackPanel>
+                <TextBox x:Name="fullNameSearchBox"/>
+                <Button x:Name="addBtn" Content="Добавить" Grid.Row="1" Grid.Column="0" Click="addBtn_Click"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Column="1">
+            <Label Content="Группа" VerticalAlignment="Top"/>
+            <StackPanel>
+                <TextBox x:Name="groupSearchBox"/>
+                <Button x:Name="editBtn" Content="Редактировать" Grid.Row="1" Grid.Column="1" Click="editBtn_Click"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Column="2">
+            <Label Content="С" VerticalAlignment="Top"/>
+            <StackPanel>
+                <DatePicker x:Name="fromDateSearchBox"/>
+                <Button x:Name="deleteBtn" Content="Удалить" Grid.Row="1" Grid.Column="2" BorderBrush="Red" BorderThickness="3,3,3,3" Click="deleteBtn_Click"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Column="3">
+            <Label VerticalAlignment="Top">По</Label>
+            <StackPanel>
+                <DatePicker x:Name="toDateSearchBox"/>
+                <Button x:Name="searchBtn" Content="Поиск" Grid.Row="1" Grid.Column="3" Click="searchBtn_Click"/>
+            </StackPanel>
+        </StackPanel>
+
+        <materialDesign:Card Grid.Row="2" Grid.ColumnSpan="4">
+            <!-- DataGrid -->
+            <DataGrid x:Name="TestGrid" Grid.Row="2" Grid.ColumnSpan="4">
+                <DataGrid.Columns>
+                    <DataGridTextColumn x:Name="studentName" Header="ФИО" Binding="{Binding FullName}"/>
+                    <DataGridTextColumn x:Name="group" Header="Группа" Binding="{Binding Group}"/>
+                    <DataGridTextColumn x:Name="discipline" Header="Дисциплина" Binding="{Binding Discipline}"/>
+                    <DataGridTextColumn x:Name="date" Header="Дата" Binding="{Binding StringDate}" />
+                    <DataGridTextColumn x:Name="mark" Header="Оценка" Binding="{Binding Mark}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </materialDesign:Card>
+        <Button x:Name="vedomostBtn" Grid.Column="3" Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Right"
+                Content="Создать ведомость" Click="vedomostBtn_Click"/>
+    </Grid>
+</Page>

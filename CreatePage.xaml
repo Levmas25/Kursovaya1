@@ -1,0 +1,32 @@
+﻿<Page x:Class="Kursovaya1.CreatePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Kursovaya1"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CreatePage">
+
+    <Grid x:Name="main">
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel>
+                    <Label Content="ФИО"/>
+                    <Label Content="Группа"/>
+                    <Label Content="Дисциплина"/>
+                    <Label Content="Дата"/>
+                    <Label Content="Оценка"/>
+                </StackPanel>
+                <StackPanel x:Name="DataPanel">
+                    <TextBox x:Name="fullName" KeyDown="fullName_KeyDown" Text="{Binding FullName, Mode=OneWay}"/>
+                    <TextBox x:Name="group" KeyDown="fullName_KeyDown" Text="{Binding Group, Mode=TwoWay}"/>
+                    <TextBox x:Name="discipline" KeyDown="fullName_KeyDown" Text="{Binding Discipline, Mode=TwoWay}"/>
+                    <DatePicker x:Name="date" SelectedDate="{Binding DateTime, Mode=OneWay}"/>
+                    <TextBox x:Name="mark" KeyDown="fullName_KeyDown" Text="{Binding Mark, Mode=TwoWay}"/>
+                </StackPanel>
+            </StackPanel>
+            <Button x:Name="saveBtn" Content="Сохранить" Click="saveBtn_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>
