@@ -3,17 +3,11 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:local="clr-namespace:Kursovaya1"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-     TextElement.FontWeight="Regular"
-     TextElement.FontSize="13"
-     TextOptions.TextFormattingMode="Ideal"
-     TextOptions.TextRenderingMode="Auto"
-     Background="{DynamicResource MaterialDesignPaper}"
-     FontFamily="{DynamicResource MaterialDesignFont}"
+      ShowsNavigationUI="False"
       Title="MainPage" Loaded="Page_Loaded">
 
     <Grid>
@@ -24,55 +18,57 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/> <!-- Row for textboxes -->
-            <RowDefinition/>                <!-- Row for DataGrid -->
+            <RowDefinition Height="Auto"/>
+            <!-- Row for textboxes -->
+            <RowDefinition/>
+            <!-- Row for DataGrid -->
         </Grid.RowDefinitions>
 
-        <StackPanel Orientation="Horizontal">
-            <Label Content="ФИО" VerticalAlignment="Top"/>
+        <StackPanel Orientation="Horizontal" Margin="8">
             <StackPanel>
-                <TextBox x:Name="fullNameSearchBox"/>
-                <Button x:Name="addBtn" Content="Добавить" Grid.Row="1" Grid.Column="0" Click="addBtn_Click"/>
+                <TextBox x:Name="fullNameSearchBox" materialDesign:HintAssist.Hint="Введите ФИО" Margin="0,0,0,8" Style="{DynamicResource MaterialDesignTextBox}"/>
+                <Button x:Name="addBtn" Content="Добавить" Style="{DynamicResource MaterialDesignRaisedButton}" Click="addBtn_Click"/>
             </StackPanel>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Grid.Column="1">
-            <Label Content="Группа" VerticalAlignment="Top"/>
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Margin="8">
             <StackPanel>
-                <TextBox x:Name="groupSearchBox"/>
-                <Button x:Name="editBtn" Content="Редактировать" Grid.Row="1" Grid.Column="1" Click="editBtn_Click"/>
+                <TextBox x:Name="groupSearchBox" materialDesign:HintAssist.Hint="Введите группу" Margin="0,0,0,8" Style="{DynamicResource MaterialDesignTextBox}"/>
+                <Button x:Name="editBtn" Content="Редактировать" Style="{DynamicResource MaterialDesignRaisedButton}" Click="editBtn_Click"/>
             </StackPanel>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Grid.Column="2">
-            <Label Content="С" VerticalAlignment="Top"/>
+        <StackPanel Orientation="Horizontal" Grid.Column="2" Margin="8">
+            <Label Content="Период" VerticalAlignment="Top" Margin="0,0,8,0"/>
             <StackPanel>
-                <DatePicker x:Name="fromDateSearchBox"/>
-                <Button x:Name="deleteBtn" Content="Удалить" Grid.Row="1" Grid.Column="2" BorderBrush="Red" BorderThickness="3,3,3,3" Click="deleteBtn_Click"/>
+                <DatePicker x:Name="fromDateSearchBox" materialDesign:HintAssist.Hint="С" Padding="20,0,0,0"
+                            Style="{DynamicResource MaterialDesignDatePicker}" Margin="0,0,0,8"/>
+                <Button x:Name="deleteBtn" Content="Удалить" Style="{DynamicResource MaterialDesignRaisedButton}" BorderBrush="Red" BorderThickness="3,3,3,3" Click="deleteBtn_Click"/>
             </StackPanel>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Grid.Column="3">
-            <Label VerticalAlignment="Top">По</Label>
+        <StackPanel Orientation="Horizontal" Grid.Column="3" Margin="8">
             <StackPanel>
-                <DatePicker x:Name="toDateSearchBox"/>
-                <Button x:Name="searchBtn" Content="Поиск" Grid.Row="1" Grid.Column="3" Click="searchBtn_Click"/>
+                <DatePicker x:Name="toDateSearchBox" materialDesign:HintAssist.Hint="По" Padding="20,0,0,0"
+                            Style="{DynamicResource MaterialDesignDatePicker}" Margin="0,0,0,8"/>
+                <Button x:Name="searchBtn" Content="Поиск" Style="{DynamicResource MaterialDesignRaisedButton}" Click="searchBtn_Click"/>
             </StackPanel>
         </StackPanel>
 
-        <materialDesign:Card Grid.Row="2" Grid.ColumnSpan="4">
-            <!-- DataGrid -->
-            <DataGrid x:Name="TestGrid" Grid.Row="2" Grid.ColumnSpan="4">
-                <DataGrid.Columns>
-                    <DataGridTextColumn x:Name="studentName" Header="ФИО" Binding="{Binding FullName}"/>
-                    <DataGridTextColumn x:Name="group" Header="Группа" Binding="{Binding Group}"/>
-                    <DataGridTextColumn x:Name="discipline" Header="Дисциплина" Binding="{Binding Discipline}"/>
-                    <DataGridTextColumn x:Name="date" Header="Дата" Binding="{Binding StringDate}" />
-                    <DataGridTextColumn x:Name="mark" Header="Оценка" Binding="{Binding Mark}"/>
-                </DataGrid.Columns>
-            </DataGrid>
-        </materialDesign:Card>
+        <!-- DataGrid -->
+        <DataGrid x:Name="TestGrid" Grid.Row="2" Grid.ColumnSpan="4" Margin="8" AutoGenerateColumns="False" CanUserAddRows="False"
+                  CanUserDeleteRows="False" CanUserReorderColumns="False" IsReadOnly="True"
+                  Style="{DynamicResource MaterialDesignDataGrid}">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="studentName" Header="ФИО" Binding="{Binding FullName, Mode=OneWay}"/>
+                <DataGridTextColumn x:Name="group" Header="Группа" Binding="{Binding Group}"/>
+                <DataGridTextColumn x:Name="discipline" Header="Дисциплина" Binding="{Binding Discipline}"/>
+                <DataGridTextColumn x:Name="date" Header="Дата" Binding="{Binding StringDate}"/>
+                <DataGridTextColumn x:Name="mark" Header="Оценка" Binding="{Binding Mark}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
         <Button x:Name="vedomostBtn" Grid.Column="3" Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Right"
-                Content="Создать ведомость" Click="vedomostBtn_Click"/>
+                Content="Создать ведомость" Style="{DynamicResource MaterialDesignRaisedButton}" Click="vedomostBtn_Click"/>
     </Grid>
 </Page>

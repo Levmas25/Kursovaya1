@@ -3,30 +3,49 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:local="clr-namespace:Kursovaya1"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="CreatePage">
 
     <Grid x:Name="main">
-        <StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <StackPanel>
-                    <Label Content="ФИО"/>
-                    <Label Content="Группа"/>
-                    <Label Content="Дисциплина"/>
-                    <Label Content="Дата"/>
-                    <Label Content="Оценка"/>
-                </StackPanel>
-                <StackPanel x:Name="DataPanel">
-                    <TextBox x:Name="fullName" KeyDown="fullName_KeyDown" Text="{Binding FullName, Mode=OneWay}"/>
-                    <TextBox x:Name="group" KeyDown="fullName_KeyDown" Text="{Binding Group, Mode=TwoWay}"/>
-                    <TextBox x:Name="discipline" KeyDown="fullName_KeyDown" Text="{Binding Discipline, Mode=TwoWay}"/>
-                    <DatePicker x:Name="date" SelectedDate="{Binding DateTime, Mode=OneWay}"/>
-                    <TextBox x:Name="mark" KeyDown="fullName_KeyDown" Text="{Binding Mark, Mode=TwoWay}"/>
-                </StackPanel>
+        <Button x:Name="backBtn" Content="Назад" Style="{DynamicResource MaterialDesignRaisedButton}"
+                Click="backBtn_CLick" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16"/>
+        <StackPanel Margin="16">
+
+            <StackPanel x:Name="DataPanel" Width="200">
+                <TextBox x:Name="fullName" 
+                             materialDesign:HintAssist.Hint="Введите ФИО" 
+                             Text="{Binding FullName, Mode=OneWay}" 
+                             Style="{DynamicResource MaterialDesignTextBox}" 
+                             Margin="0,0,0,8"/>
+                <TextBox x:Name="group" 
+                             materialDesign:HintAssist.Hint="Введите группу" 
+                             Text="{Binding Group, Mode=TwoWay}" 
+                             Style="{DynamicResource MaterialDesignTextBox}" 
+                             Margin="0,0,0,8"/>
+                <TextBox x:Name="discipline" 
+                             materialDesign:HintAssist.Hint="Введите дисциплину" 
+                             Text="{Binding Discipline, Mode=TwoWay}" 
+                             Style="{DynamicResource MaterialDesignTextBox}" 
+                             Margin="0,0,0,8"/>
+                <DatePicker x:Name="date" 
+                                SelectedDate="{Binding DateTime, Mode=OneWay}" 
+                                Style="{DynamicResource MaterialDesignDatePicker}" 
+                                Margin="0,0,0,8"/>
+                <TextBox x:Name="mark" 
+                             materialDesign:HintAssist.Hint="Введите оценку" 
+                             Text="{Binding Mark, Mode=TwoWay}" 
+                             Style="{DynamicResource MaterialDesignTextBox}" 
+                             Margin="0,0,0,8"/>
             </StackPanel>
-            <Button x:Name="saveBtn" Content="Сохранить" Click="saveBtn_Click"/>
+            <Button x:Name="saveBtn" 
+            Content="Сохранить" 
+            Style="{DynamicResource MaterialDesignRaisedButton}" 
+            Click="saveBtn_Click" 
+            HorizontalAlignment="Right"/>
         </StackPanel>
+
     </Grid>
 </Page>

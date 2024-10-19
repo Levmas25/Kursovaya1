@@ -148,6 +148,7 @@ C:\Users\Самыел\source\repos\Kursovaya1\Kursovaya1\bin\Debug\net8.0-window
 C:\Users\Самыел\source\repos\Kursovaya1\Kursovaya1\obj\Debug\net8.0-windows\Kursovaya1.csproj.AssemblyReference.cache
 C:\Users\Самыел\source\repos\Kursovaya1\Kursovaya1\obj\Debug\net8.0-windows\CreatePage.g.cs
 C:\Users\Самыел\source\repos\Kursovaya1\Kursovaya1\obj\Debug\net8.0-windows\MainPage.g.cs
+C:\Users\Самыел\source\repos\Kursovaya1\Kursovaya1\obj\Debug\net8.0-windows\Some.g.cs
 C:\Users\Самыел\source\repos\Kursovaya1\Kursovaya1\obj\Debug\net8.0-windows\VedomostPage.g.cs
 C:\Users\Самыел\source\repos\Kursovaya1\Kursovaya1\obj\Debug\net8.0-windows\App.g.cs
 C:\Users\Самыел\source\repos\Kursovaya1\Kursovaya1\obj\Debug\net8.0-windows\Kursovaya1_MarkupCompile.cache
@@ -155,12 +156,14 @@ C:\Users\Самыел\source\repos\Kursovaya1\Kursovaya1\obj\Debug\net8.0-window
 C:\Users\Самыел\source\repos\Kursovaya1\Kursovaya1\obj\Debug\net8.0-windows\App.baml
 C:\Users\Самыел\source\repos\Kursovaya1\Kursovaya1\obj\Debug\net8.0-windows\CreatePage.baml
 C:\Users\Самыел\source\repos\Kursovaya1\Kursovaya1\obj\Debug\net8.0-windows\MainPage.baml
+C:\Users\Самыел\source\repos\Kursovaya1\Kursovaya1\obj\Debug\net8.0-windows\Some.baml
 C:\Users\Самыел\source\repos\Kursovaya1\Kursovaya1\obj\Debug\net8.0-windows\VedomostPage.baml
 C:\Users\Самыел\source\repos\Kursovaya1\Kursovaya1\obj\Debug\net8.0-windows\Kursovaya1.g.resources
 C:\Users\Самыел\source\repos\Kursovaya1\Kursovaya1\obj\Debug\net8.0-windows\Kursovaya1.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Самыел\source\repos\Kursovaya1\Kursovaya1\obj\Debug\net8.0-windows\Kursovaya1.AssemblyInfoInputs.cache
 C:\Users\Самыел\source\repos\Kursovaya1\Kursovaya1\obj\Debug\net8.0-windows\Kursovaya1.AssemblyInfo.cs
 C:\Users\Самыел\source\repos\Kursovaya1\Kursovaya1\obj\Debug\net8.0-windows\Kursovaya1.csproj.CoreCompileInputs.cache
+C:\Users\Самыел\source\repos\Kursovaya1\Kursovaya1\obj\Debug\net8.0-windows\Kursovaya1.sourcelink.json
 C:\Users\Самыел\source\repos\Kursovaya1\Kursovaya1\obj\Debug\net8.0-windows\Kursovaya1.csproj.Up2Date
 C:\Users\Самыел\source\repos\Kursovaya1\Kursovaya1\obj\Debug\net8.0-windows\Kursovaya1.dll
 C:\Users\Самыел\source\repos\Kursovaya1\Kursovaya1\obj\Debug\net8.0-windows\refint\Kursovaya1.dll

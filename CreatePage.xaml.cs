@@ -93,5 +93,10 @@ namespace Kursovaya1
                 saveBtn_Click(sender, e);
             }
         }
+
+        private void backBtn_CLick(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
     }
 }

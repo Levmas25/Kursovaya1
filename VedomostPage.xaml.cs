@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 using iTextSharp.text.pdf;
 using iTextSharp.text;
 using System.IO;
+using System.Windows.Forms;
 
 namespace Kursovaya1
 {
@@ -105,7 +106,7 @@ namespace Kursovaya1
                 // Close the document
                 document.Close();
             }
-            MessageBox.Show($"PDF created successfully at: {pdfPath}");
+            System.Windows.Forms.MessageBox.Show($"PDF created successfully at: {pdfPath}");
         }
 
         private void createVedomost_Click(object sender, RoutedEventArgs e)
@@ -121,6 +122,11 @@ namespace Kursovaya1
             }
 
             GetStudents(group, date, discipline);
+            NavigationService.GoBack();
+        }
+
+        private void backBtn_Click(object sender, RoutedEventArgs e)
+        {
             NavigationService.GoBack();
         }
     }

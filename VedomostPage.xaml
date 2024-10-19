@@ -3,26 +3,44 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:local="clr-namespace:Kursovaya1"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="VedomostPage">
 
     <Grid>
-        <StackPanel>
-            <StackPanel Orientation="Horizontal">
+        <Button x:Name="backBtn" Content="Назад" Style="{DynamicResource MaterialDesignRaisedButton}"
+        Click="backBtn_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16"/>
+        <StackPanel Margin="16">
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,16">
                 <StackPanel>
-                    <Label Content="Группа"/>
-                    <Label Content="Дисциплина"/>
-                    <Label Content="Дата"/>
+                    <Label Content="Группа" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                    <Label Content="Дисциплина" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                    <Label Content="Дата" VerticalAlignment="Center" Margin="0,0,8,0"/>
                 </StackPanel>
-                <StackPanel>
-                    <ComboBox x:Name="groupComboBox" />
-                    <ComboBox x:Name="disciplineComboBox"/>
-                    <DatePicker x:Name="dateDatePicker"/>
+
+                <StackPanel Width="200">
+                    <ComboBox x:Name="groupComboBox" 
+                              materialDesign:HintAssist.Hint="Выберите группу" 
+                              Style="{DynamicResource MaterialDesignComboBox}" 
+                              Margin="0,0,0,8"/>
+                    <ComboBox x:Name="disciplineComboBox" 
+                              materialDesign:HintAssist.Hint="Выберите дисциплину" 
+                              Style="{DynamicResource MaterialDesignComboBox}" 
+                              Margin="0,0,0,8"/>
+                    <DatePicker x:Name="dateDatePicker" 
+                                materialDesign:HintAssist.Hint="Выберите дату" 
+                                Style="{DynamicResource MaterialDesignDatePicker}" 
+                                Margin="0,0,0,8"/>
                 </StackPanel>
             </StackPanel>
-            <Button x:Name="createVedomost" Content="Создать" Click="createVedomost_Click"/>
+
+            <Button x:Name="createVedomost" 
+                    Content="Создать" 
+                    Style="{DynamicResource MaterialDesignRaisedButton}" 
+                    Click="createVedomost_Click" 
+                    HorizontalAlignment="Right"/>
         </StackPanel>
     </Grid>
 </Page>
