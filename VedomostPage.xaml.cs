@@ -57,9 +57,19 @@ namespace Kursovaya1
 
         public void CreateVedomost(List<Test> students)
         {
-            string pdfPath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Vedomost.pdf");
+            string pdfPath = string.Empty;
 
-            using (FileStream fs = new FileStream(pdfPath, FileMode.Create, FileAccess.Write, FileShare.None))
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "PDF Files (*.pdf)|*.pdf";
+            saveFileDialog.FileName = "Vedomost.pdf"; // Default file name
+            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop); // Start on the Desktop
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                pdfPath = saveFileDialog.FileName;
+            }
+
+                using (FileStream fs = new FileStream(pdfPath, FileMode.Create, FileAccess.Write, FileShare.None))
             {
                 Document document = new Document(PageSize.A4);
                 PdfWriter.GetInstance(document, fs);
@@ -106,7 +116,7 @@ namespace Kursovaya1
                 // Close the document
                 document.Close();
             }
-            System.Windows.Forms.MessageBox.Show($"PDF created successfully at: {pdfPath}");
+            System.Windows.Forms.MessageBox.Show($"PDF успешно создан по пути: {pdfPath}");
         }
 
         private void createVedomost_Click(object sender, RoutedEventArgs e)
