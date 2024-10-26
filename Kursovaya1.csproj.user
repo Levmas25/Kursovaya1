@@ -13,9 +13,6 @@
     <Compile Update="MainPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Some.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="VedomostPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -25,9 +22,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainPage.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Some.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="VedomostPage.xaml">
